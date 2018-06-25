@@ -25,7 +25,7 @@ class SettingCell: UITableViewCell {
     private let timers: [Int] = [1,2,3,4,5,6,7,8]
     
     //default value
-    var accuracySetting: LocationManager.Accuracy? = .best
+    var accuracySetting: LocationManager.Accuracy = .best
     var timer: Int? = 1
     var distance: Int = 50
     

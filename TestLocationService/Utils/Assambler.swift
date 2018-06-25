@@ -21,6 +21,7 @@ class Assambler {
 //        locationQueue.addOperation(LocationManager.sharedInstance)
         DeviceManager.sharedInstance.startMonitoringBatteryLevel()
         LocationManager.sharedInstance
+        DataManager.sharedInstance
     }
     
 }

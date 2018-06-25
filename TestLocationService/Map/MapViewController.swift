@@ -64,8 +64,8 @@ class MapViewController: UIViewController, MapLogicInputProtocol {
         button.setImage(Consts.Buttons.Image.monitoringNavigation.draw(), for: .normal)
         button.backgroundColor = UIColor.purple
         button.showsTouchWhenHighlighted = true
-        button.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 45).isActive = true
         button.layer.cornerRadius = 22
         return button
     }()
@@ -100,7 +100,7 @@ class MapViewController: UIViewController, MapLogicInputProtocol {
         
         mapView.addConstraints([centerY, right,
                                 leftMonitor, bottomMonitor])
-        
+    
         self.view = mapView
     }
     @objc private func startMonitoringUserLocation() {

@@ -56,7 +56,9 @@ class MapInteractor: MapInteractorInputProtocol, LocationProtocol {
     //Location protocol delegate
     func updateCurrentLocation(_ location: CLLocation) {
         userLocation = location
-        presenter?.provideLastLocation(zoom: zoomLevel, cameraPosition: location)
+        if userMonitoringIsActive {
+            presenter?.provideLastLocation(zoom: zoomLevel, cameraPosition: location)
+        }
     }
 
 }

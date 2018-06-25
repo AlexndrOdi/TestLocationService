@@ -39,6 +39,7 @@
 		9598AA0920DF008E0077A358 /* DescriptionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0820DF008E0077A358 /* DescriptionInteractor.swift */; };
 		9598AA0B20DF01410077A358 /* DescriptionConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0A20DF01410077A358 /* DescriptionConfigurer.swift */; };
 		9598AA0E20DF24640077A358 /* Assambler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0D20DF24640077A358 /* Assambler.swift */; };
+		95B98A1E20E18BD6006B75CA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B98A1D20E18BD6006B75CA /* DataManager.swift */; };
 		F4C02954E1AD8CD06552BAAE /* libPods-TestLocationService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C059BCF68EEB5FD0ABBA393 /* libPods-TestLocationService.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		9598AA0820DF008E0077A358 /* DescriptionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionInteractor.swift; sourceTree = "<group>"; };
 		9598AA0A20DF01410077A358 /* DescriptionConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionConfigurer.swift; sourceTree = "<group>"; };
 		9598AA0D20DF24640077A358 /* Assambler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assambler.swift; sourceTree = "<group>"; };
+		95B98A1D20E18BD6006B75CA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B278D51CD1451CA3AF6C9A7C /* Pods-TestLocationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestLocationService.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestLocationService/Pods-TestLocationService.release.xcconfig"; sourceTree = "<group>"; };
 		B8207D7FA6F1E09601D0F411 /* Pods-TestLocationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestLocationService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestLocationService/Pods-TestLocationService.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +191,7 @@
 			children = (
 				9598A9ED20DE680D0077A358 /* LocationManager.swift */,
 				9598A9FF20DEF8240077A358 /* DeviceManager.swift */,
+				95B98A1D20E18BD6006B75CA /* DataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95156CF920DA3529003DD2B4 /* TabBarViewController.swift in Sources */,
+				95B98A1E20E18BD6006B75CA /* DataManager.swift in Sources */,
 				9598AA0020DEF8240077A358 /* DeviceManager.swift in Sources */,
 				9598A9EE20DE680D0077A358 /* LocationManager.swift in Sources */,
 				9598A9F220DEA40E0077A358 /* SettingsPresenter.swift in Sources */,

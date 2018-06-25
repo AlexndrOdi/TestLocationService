@@ -20,27 +20,6 @@ class LocationManager: NSObject {
     
     static let sharedInstance = LocationManager()
     
-    enum Accuracy {
-        case best, bestForNavigation, nearestTenMeters, hundredMeters, killometer, threeKillometers
-        
-        func setAccuracy() -> CLLocationAccuracy {
-            switch self {
-            case .best:
-                return kCLLocationAccuracyBest
-            case .bestForNavigation:
-                return kCLLocationAccuracyBestForNavigation
-            case .nearestTenMeters:
-                return kCLLocationAccuracyNearestTenMeters
-            case .hundredMeters:
-                return kCLLocationAccuracyHundredMeters
-            case .killometer:
-                return kCLLocationAccuracyKilometer
-            case .threeKillometers:
-                return kCLLocationAccuracyThreeKilometers
-            }
-        }
-    }
-    
     var locationManager: CLLocationManager
     var currentAccuracy: CLLocationAccuracy
     
@@ -56,12 +35,17 @@ class LocationManager: NSObject {
         self.locationManager.delegate = self
     }
     
+    //Settings
+    func setDistanceFilter(distance: LocationManager.DistanceFilter) {
+        locationManager.distanceFilter = distance.setDistance()
+    }
+    
     func setUpdateTimer(timer: Int){
         self.timeInteravel = Double(timer)
     }
     
     func setAccuracy(accuracy: Accuracy){
-        locationManager.delegate = self
+//        locationManager.delegate = self
         currentAccuracy = accuracy.setAccuracy()
         locationManager.desiredAccuracy = currentAccuracy
         locationManager.startUpdatingLocation()
@@ -103,5 +87,46 @@ extension LocationManager: CLLocationManagerDelegate {
         
         delegate?.updateCurrentLocation(location)
         print("manager acc = \(manager.desiredAccuracy)")
+        print("manager distance = \(manager.distanceFilter)")
+    }
+}
+
+extension LocationManager {
+    enum Accuracy {
+        case best, bestForNavigation, nearestTenMeters, hundredMeters, killometer, threeKillometers
+        
+        func setAccuracy() -> CLLocationAccuracy {
+            switch self {
+            case .best:
+                return kCLLocationAccuracyBest
+            case .bestForNavigation:
+                return kCLLocationAccuracyBestForNavigation
+            case .nearestTenMeters:
+                return kCLLocationAccuracyNearestTenMeters
+            case .hundredMeters:
+                return kCLLocationAccuracyHundredMeters
+            case .killometer:
+                return kCLLocationAccuracyKilometer
+            case .threeKillometers:
+                return kCLLocationAccuracyThreeKilometers
+            }
+        }
+    }
+    
+    enum DistanceFilter {
+        case tenMeters, hundredMeters, fiveHundredMeters, killometer
+        
+        func setDistance() -> CLLocationDistance {
+            switch self {
+            case .tenMeters:
+                return 10
+            case .hundredMeters:
+                return 100
+            case .fiveHundredMeters:
+                return 500
+            case .killometer:
+                return 1000
+            }
+        }
     }
 }

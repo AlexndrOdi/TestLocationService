@@ -35,6 +35,7 @@ class DebugCell: UITableViewCell {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
 
         accessoryType = .disclosureIndicator
+        
     }
 }
 

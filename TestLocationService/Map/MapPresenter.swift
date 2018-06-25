@@ -26,7 +26,7 @@ class MapPresenter: MapPresenterProtocol {
         let camera = GMSCameraPosition.camera(withLatitude: cameraPosition.coordinate.latitude,
                                               longitude: cameraPosition.coordinate.longitude,
                                               zoom: zoom)
-//        view?.displayUserLocation(zoom: zoom, cameraPosition: camera)
+        view?.displayUserLocation(zoom: zoom, cameraPosition: camera)
     }
     
     func tappedMonitoringButton() {

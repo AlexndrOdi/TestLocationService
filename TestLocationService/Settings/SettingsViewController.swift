@@ -9,16 +9,20 @@
 import UIKit
 
 protocol SettingsViewOutputProtocol: class {
-    func updateSettings(accuracy: LocationManager.Accuracy?, timer: Int?)
+    func updateSettings(accuracy: LocationManager.Accuracy, distance: LocationManager.DistanceFilter)
+    func changeStateOfSettingBy(index: Int)
+    func performSettings()
 }
 protocol SettingsViewInputProtocol: class {
-    
+    func displayAvailableSettings(_ settings: [Preset])
+    func displayUpdatedButton(array: [Preset])
 }
 
 class SettingsViewController: UITableViewController, SettingsViewInputProtocol {
     
     var presenter: SettingsViewOutputProtocol?
-    var selectedIndexPath: IndexPath?
+    
+    var array: [Preset] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,21 +30,33 @@ class SettingsViewController: UITableViewController, SettingsViewInputProtocol {
         SettingsConfigurer.sharedInstance.configure(view: self)
         
         self.navigationItem.title = Consts.NavigationTitle.Settings.rawValue
-        tableView.register(SettingCell.self, forCellReuseIdentifier: SettingCell.identifier)
         tableView.register(PresetCell.self, forCellReuseIdentifier: PresetCell.identifier)
+        presenter?.performSettings()
     }
     
-    @objc func dismissPicker() {
-        guard let index = selectedIndexPath else { return }
-        guard let cell = tableView.cellForRow(at: index) as? SettingCell else { return }
-        cell.inputField.endEditing(true)
+    func displayAvailableSettings(_ settings: [Preset]) {
+        self.array = settings
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
     
-        presenter?.updateSettings(accuracy: cell.accuracySetting, timer: cell.timer)
+    func displayUpdatedButton(array: [Preset]) {
+        self.array = array
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    //Switch action
+    @objc func changedStateOfSetting(_ sender: UISwitch) {
+        presenter?.changeStateOfSettingBy(index: sender.tag)
     }
     
     //TableView dataSource and delegate
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView: UIView = {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 { return nil }
+        let headerView: UIView = {
             let view = UIView()
             view.backgroundColor = UIColor.lightGray
             let label = UILabel()
@@ -53,21 +69,18 @@ class SettingsViewController: UITableViewController, SettingsViewInputProtocol {
             view.addConstraints([left, centerY])
             return view
         }()
-        if let label = footerView.subviews.first as? UILabel, section == 1 {
-            label.text = "Presets:"
-        }
-        return footerView
+        return headerView
     }
     
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 40.0
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 0 : 10
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
+        return 70
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 8
+        return array.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,46 +88,18 @@ class SettingsViewController: UITableViewController, SettingsViewInputProtocol {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingCell.identifier) as? SettingCell else {
-            fatalError("The dequeued cell is not an instance of SettingCell")
-        }
-        guard let cellPreset = tableView.dequeueReusableCell(withIdentifier: PresetCell.identifier) as? PresetCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PresetCell.identifier) as? PresetCell else {
             fatalError("The dequeued cell is not an instance of SettingCell")
         }
         
-        if indexPath.section == 0 {
-            cell.settingName.text = Consts.SettingNames.accuracy.rawValue
-            cell.setInputView(picker: .settings)
-            if let button = cell.toolBar.items?.first {
-                button.target = self
-                button.action = #selector(dismissPicker)
-            }
-            //TODO: disabled to tests
-            cell.isUserInteractionEnabled = false
-            return cell
-        }
-        if indexPath.section == 1 {
-            cell.settingName.text = Consts.SettingNames.delay.rawValue
-            cell.setInputView(picker: .timers)
-            if let button = cell.toolBar.items?.first {
-                button.target = self
-                button.action = #selector(dismissPicker)
-            }
-            //TODO: disabled to tests
-            cell.isUserInteractionEnabled = false
-            return cell
-        }
+        cell.accuracyLabel.text = "Точность: " + array[indexPath.section].accuracyname
+        cell.distanceLabel.text = "Дистанция: " + array[indexPath.section].distancename
+        cell.switcher.tag = indexPath.section
+        cell.switcher.addTarget(self, action: #selector(changedStateOfSetting(_:)), for: .valueChanged)
+       
+        cell.switcher.setOn(array[indexPath.section].isActive, animated: true)
+        cell.switcher.isEnabled = !array[indexPath.section].isActive
         
-        cellPreset.nameLabel.text = "Preset \(indexPath.section - 1)"
-        
-        return cellPreset
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? SettingCell {
-            cell.inputField.becomeFirstResponder()
-            selectedIndexPath = indexPath
-        }
-        tableView.deselectRow(at: indexPath, animated: true)
+        return cell
     }
 }

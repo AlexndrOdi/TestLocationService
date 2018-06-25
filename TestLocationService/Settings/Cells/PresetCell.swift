@@ -20,7 +20,7 @@ class PresetCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var nameLabel: UILabel = {
+    var accuracyLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
@@ -29,31 +29,49 @@ class PresetCell: UITableViewCell {
         return label
     }()
     
+    var distanceLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = false
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textAlignment = .left
+        return label
+    }()
+    
+    var verticalStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .fill
+        stack.spacing = 4
+        return stack
+    }()
+    
     var switcher: UISwitch = {
         let switcher = UISwitch()
         switcher.isOn = false
         switcher.translatesAutoresizingMaskIntoConstraints = false
-        switcher.addTarget(self, action: #selector(switchEvent), for: .touchUpInside)
+        switcher.onTintColor = UIColor.purple
         return switcher
     }()
     
-    
-    @objc private func switchEvent() {
-        print("changed switch position")
-    }
-    
     private func setup() {
-        addSubview(nameLabel)
+        
+        verticalStack.addArrangedSubview(accuracyLabel)
+        verticalStack.addArrangedSubview(distanceLabel)
+        addSubview(verticalStack)
         addSubview(switcher)
         
-        let labelLeft = NSLayoutConstraint(item: nameLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 16)
-        let labelCenterY = NSLayoutConstraint(item: nameLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        let stackLeft = NSLayoutConstraint(item: verticalStack, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 16)
+        let stackCenterY = NSLayoutConstraint(item: verticalStack, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+   
+        let rightSwitcher = NSLayoutConstraint(item: switcher, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -16)
+        let centerYSwitcher = NSLayoutConstraint(item: switcher, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
         
-        let switcherRight = NSLayoutConstraint(item: switcher, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -16)
-        let switcherCenterY = NSLayoutConstraint(item: switcher, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        addConstraints([stackLeft, stackCenterY,
+                        rightSwitcher, centerYSwitcher])
         
-        addConstraints([labelLeft, labelCenterY,
-                        switcherRight, switcherCenterY])
+        selectionStyle = .none
     }
     
 }

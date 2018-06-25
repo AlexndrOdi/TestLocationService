@@ -41,7 +41,7 @@ class DescriptionCell: UITableViewCell {
         addSubview(dateLabel)
         addSubview(descriptionLabel)
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": dateLabel]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-4-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": dateLabel]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-2-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": dateLabel]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": descriptionLabel]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-34-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": descriptionLabel]))
         isUserInteractionEnabled = false

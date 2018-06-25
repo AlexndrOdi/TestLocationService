@@ -22,3 +22,11 @@ struct Location {
     var date: String
     var position: String
 }
+
+struct Preset {
+    var accuracyname: String
+    var distancename: String
+    var accuracy: LocationManager.Accuracy
+    var distance: LocationManager.DistanceFilter
+    var isActive: Bool
+}

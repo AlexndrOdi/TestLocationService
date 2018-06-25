@@ -19,14 +19,13 @@ class DeviceManager: DeviceManagerProtocol {
     static let sharedInstance = DeviceManager()
         
     var manager: UIDevice
-    var timer: Timer
     var batteryHistory = Set<BatteryHistory>()
+    
     private var batteryLevel: Float
     
     private init() {
         self.manager = UIDevice.current
         self.manager.isBatteryMonitoringEnabled = true
-        self.timer = Timer()
         self.batteryHistory = []
         self.batteryLevel = 0
     }
@@ -41,11 +40,9 @@ class DeviceManager: DeviceManagerProtocol {
     }
     
     func startMonitoringBatteryLevel() {
-        timer = Timer.scheduledTimer(timeInterval: 5,//Consts.Timer.Battery.everyMin.rawValue,
-                                     target: self,
-                                     selector: #selector(addHistory),
-                                     userInfo: nil,
-                                     repeats: true)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(addHistory),
+                                               name: .UIDeviceBatteryLevelDidChange, object: nil)
     }
     
     @objc private func addHistory(){
