@@ -7,21 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950982F020DAC1C4005B2E8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950982EF20DAC1C4005B2E8D /* SettingsViewController.swift */; };
+		950982F220DAC1DD005B2E8D /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950982F120DAC1DD005B2E8D /* SettingCell.swift */; };
+		950982F520DAC970005B2E8D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 950982F420DAC970005B2E8D /* Podfile */; };
+		950982F720DACBC1005B2E8D /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950982F620DACBC1005B2E8D /* Consts.swift */; };
 		95156CD820D9543B003DD2B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95156CD720D9543B003DD2B4 /* AppDelegate.swift */; };
-		95156CDA20D9543B003DD2B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95156CD920D9543B003DD2B4 /* ViewController.swift */; };
-		95156CDD20D9543B003DD2B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95156CDB20D9543B003DD2B4 /* Main.storyboard */; };
 		95156CDF20D9543E003DD2B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95156CDE20D9543E003DD2B4 /* Assets.xcassets */; };
 		95156CE220D9543E003DD2B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95156CE020D9543E003DD2B4 /* LaunchScreen.storyboard */; };
+		95156CEA20D99D72003DD2B4 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95156CE920D99D72003DD2B4 /* DebugViewController.swift */; };
+		95156CEC20D99F3B003DD2B4 /* DebugCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95156CEB20D99F3B003DD2B4 /* DebugCell.swift */; };
+		95156CEE20D99FB1003DD2B4 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95156CED20D99FB1003DD2B4 /* ReuseIdentifierProtocol.swift */; };
+		95156CF720DA33C7003DD2B4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95156CF620DA33C7003DD2B4 /* MapViewController.swift */; };
+		95156CF920DA3529003DD2B4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95156CF820DA3529003DD2B4 /* TabBarViewController.swift */; };
+		957821C520E1104F00511172 /* PresetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957821C420E1104F00511172 /* PresetCell.swift */; };
+		9598A9E720DE5E670077A358 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9E620DE5E670077A358 /* MapPresenter.swift */; };
+		9598A9E920DE5E720077A358 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9E820DE5E720077A358 /* MapInteractor.swift */; };
+		9598A9EB20DE5E7F0077A358 /* MapConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9EA20DE5E7F0077A358 /* MapConfigurer.swift */; };
+		9598A9EE20DE680D0077A358 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9ED20DE680D0077A358 /* LocationManager.swift */; };
+		9598A9F020DEA3680077A358 /* SettingsConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9EF20DEA3680077A358 /* SettingsConfigurer.swift */; };
+		9598A9F220DEA40E0077A358 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9F120DEA40E0077A358 /* SettingsPresenter.swift */; };
+		9598A9F420DEA45F0077A358 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9F320DEA45F0077A358 /* SettingsInteractor.swift */; };
+		9598A9F620DEED9C0077A358 /* DebugPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9F520DEED9C0077A358 /* DebugPresenter.swift */; };
+		9598A9F820DEEDD00077A358 /* DebugInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9F720DEEDD00077A358 /* DebugInteractor.swift */; };
+		9598A9FA20DEEE0C0077A358 /* DebugRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9F920DEEE0C0077A358 /* DebugRouter.swift */; };
+		9598A9FC20DEEE360077A358 /* DebugConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9FB20DEEE360077A358 /* DebugConfigurer.swift */; };
+		9598A9FE20DEF06B0077A358 /* DebugModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9FD20DEF06B0077A358 /* DebugModels.swift */; };
+		9598AA0020DEF8240077A358 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9FF20DEF8240077A358 /* DeviceManager.swift */; };
+		9598AA0220DEFF7E0077A358 /* DescriptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0120DEFF7E0077A358 /* DescriptionTableViewController.swift */; };
+		9598AA0420DEFFB70077A358 /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0320DEFFB70077A358 /* DescriptionCell.swift */; };
+		9598AA0720DF00670077A358 /* DescriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0620DF00670077A358 /* DescriptionPresenter.swift */; };
+		9598AA0920DF008E0077A358 /* DescriptionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0820DF008E0077A358 /* DescriptionInteractor.swift */; };
+		9598AA0B20DF01410077A358 /* DescriptionConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0A20DF01410077A358 /* DescriptionConfigurer.swift */; };
+		9598AA0E20DF24640077A358 /* Assambler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0D20DF24640077A358 /* Assambler.swift */; };
+		F4C02954E1AD8CD06552BAAE /* libPods-TestLocationService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C059BCF68EEB5FD0ABBA393 /* libPods-TestLocationService.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C059BCF68EEB5FD0ABBA393 /* libPods-TestLocationService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestLocationService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		950982EF20DAC1C4005B2E8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		950982F120DAC1DD005B2E8D /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		950982F420DAC970005B2E8D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		950982F620DACBC1005B2E8D /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		95156CD420D9543B003DD2B4 /* TestLocationService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestLocationService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95156CD720D9543B003DD2B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95156CD920D9543B003DD2B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		95156CDC20D9543B003DD2B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95156CDE20D9543E003DD2B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95156CE120D9543E003DD2B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95156CE320D9543E003DD2B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95156CE920D99D72003DD2B4 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		95156CEB20D99F3B003DD2B4 /* DebugCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugCell.swift; sourceTree = "<group>"; };
+		95156CED20D99FB1003DD2B4 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
+		95156CF620DA33C7003DD2B4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		95156CF820DA3529003DD2B4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		957821C420E1104F00511172 /* PresetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCell.swift; sourceTree = "<group>"; };
+		9598A9E620DE5E670077A358 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		9598A9E820DE5E720077A358 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		9598A9EA20DE5E7F0077A358 /* MapConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfigurer.swift; sourceTree = "<group>"; };
+		9598A9ED20DE680D0077A358 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		9598A9EF20DEA3680077A358 /* SettingsConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurer.swift; sourceTree = "<group>"; };
+		9598A9F120DEA40E0077A358 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		9598A9F320DEA45F0077A358 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		9598A9F520DEED9C0077A358 /* DebugPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPresenter.swift; sourceTree = "<group>"; };
+		9598A9F720DEEDD00077A358 /* DebugInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugInteractor.swift; sourceTree = "<group>"; };
+		9598A9F920DEEE0C0077A358 /* DebugRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugRouter.swift; sourceTree = "<group>"; };
+		9598A9FB20DEEE360077A358 /* DebugConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugConfigurer.swift; sourceTree = "<group>"; };
+		9598A9FD20DEF06B0077A358 /* DebugModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugModels.swift; sourceTree = "<group>"; };
+		9598A9FF20DEF8240077A358 /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
+		9598AA0120DEFF7E0077A358 /* DescriptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewController.swift; sourceTree = "<group>"; };
+		9598AA0320DEFFB70077A358 /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		9598AA0620DF00670077A358 /* DescriptionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionPresenter.swift; sourceTree = "<group>"; };
+		9598AA0820DF008E0077A358 /* DescriptionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionInteractor.swift; sourceTree = "<group>"; };
+		9598AA0A20DF01410077A358 /* DescriptionConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionConfigurer.swift; sourceTree = "<group>"; };
+		9598AA0D20DF24640077A358 /* Assambler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assambler.swift; sourceTree = "<group>"; };
+		B278D51CD1451CA3AF6C9A7C /* Pods-TestLocationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestLocationService.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestLocationService/Pods-TestLocationService.release.xcconfig"; sourceTree = "<group>"; };
+		B8207D7FA6F1E09601D0F411 /* Pods-TestLocationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestLocationService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestLocationService/Pods-TestLocationService.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +87,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C02954E1AD8CD06552BAAE /* libPods-TestLocationService.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1064174B59D20E2C2F67EF5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C059BCF68EEB5FD0ABBA393 /* libPods-TestLocationService.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		950982F320DAC1E8005B2E8D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				957821C320E0FDCF00511172 /* Cells */,
+				950982EF20DAC1C4005B2E8D /* SettingsViewController.swift */,
+				9598A9F120DEA40E0077A358 /* SettingsPresenter.swift */,
+				9598A9F320DEA45F0077A358 /* SettingsInteractor.swift */,
+				9598A9EF20DEA3680077A358 /* SettingsConfigurer.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		95156CCB20D9543B003DD2B4 = {
 			isa = PBXGroup;
 			children = (
 				95156CD620D9543B003DD2B4 /* TestLocationService */,
+				950982F420DAC970005B2E8D /* Podfile */,
 				95156CD520D9543B003DD2B4 /* Products */,
+				D796179BB86DB5AAB39956AE /* Pods */,
+				1064174B59D20E2C2F67EF5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +136,93 @@
 		95156CD620D9543B003DD2B4 /* TestLocationService */ = {
 			isa = PBXGroup;
 			children = (
+				9598AA0C20DF24300077A358 /* Utils */,
+				9598A9EC20DE67F70077A358 /* Managers */,
 				95156CD720D9543B003DD2B4 /* AppDelegate.swift */,
-				95156CD920D9543B003DD2B4 /* ViewController.swift */,
-				95156CDB20D9543B003DD2B4 /* Main.storyboard */,
+				95156CF820DA3529003DD2B4 /* TabBarViewController.swift */,
+				95156CF520DA3162003DD2B4 /* Map */,
+				9598AA0520DEFFE80077A358 /* Description */,
+				95156CF420D9C976003DD2B4 /* Debug */,
+				950982F320DAC1E8005B2E8D /* Settings */,
 				95156CDE20D9543E003DD2B4 /* Assets.xcassets */,
 				95156CE020D9543E003DD2B4 /* LaunchScreen.storyboard */,
 				95156CE320D9543E003DD2B4 /* Info.plist */,
 			);
 			path = TestLocationService;
+			sourceTree = "<group>";
+		};
+		95156CF420D9C976003DD2B4 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				95156CEB20D99F3B003DD2B4 /* DebugCell.swift */,
+				95156CE920D99D72003DD2B4 /* DebugViewController.swift */,
+				9598A9F520DEED9C0077A358 /* DebugPresenter.swift */,
+				9598A9F720DEEDD00077A358 /* DebugInteractor.swift */,
+				9598A9F920DEEE0C0077A358 /* DebugRouter.swift */,
+				9598A9FB20DEEE360077A358 /* DebugConfigurer.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		95156CF520DA3162003DD2B4 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				95156CF620DA33C7003DD2B4 /* MapViewController.swift */,
+				9598A9E620DE5E670077A358 /* MapPresenter.swift */,
+				9598A9E820DE5E720077A358 /* MapInteractor.swift */,
+				9598A9EA20DE5E7F0077A358 /* MapConfigurer.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		957821C320E0FDCF00511172 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				950982F120DAC1DD005B2E8D /* SettingCell.swift */,
+				957821C420E1104F00511172 /* PresetCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9598A9EC20DE67F70077A358 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9598A9ED20DE680D0077A358 /* LocationManager.swift */,
+				9598A9FF20DEF8240077A358 /* DeviceManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9598AA0520DEFFE80077A358 /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				9598AA0320DEFFB70077A358 /* DescriptionCell.swift */,
+				9598AA0120DEFF7E0077A358 /* DescriptionTableViewController.swift */,
+				9598AA0620DF00670077A358 /* DescriptionPresenter.swift */,
+				9598AA0820DF008E0077A358 /* DescriptionInteractor.swift */,
+				9598AA0A20DF01410077A358 /* DescriptionConfigurer.swift */,
+			);
+			path = Description;
+			sourceTree = "<group>";
+		};
+		9598AA0C20DF24300077A358 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9598A9FD20DEF06B0077A358 /* DebugModels.swift */,
+				950982F620DACBC1005B2E8D /* Consts.swift */,
+				95156CED20D99FB1003DD2B4 /* ReuseIdentifierProtocol.swift */,
+				9598AA0D20DF24640077A358 /* Assambler.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D796179BB86DB5AAB39956AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8207D7FA6F1E09601D0F411 /* Pods-TestLocationService.debug.xcconfig */,
+				B278D51CD1451CA3AF6C9A7C /* Pods-TestLocationService.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +232,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95156CE620D9543E003DD2B4 /* Build configuration list for PBXNativeTarget "TestLocationService" */;
 			buildPhases = (
+				6C689E55439539BEA643E949 /* [CP] Check Pods Manifest.lock */,
 				95156CD020D9543B003DD2B4 /* Sources */,
 				95156CD120D9543B003DD2B4 /* Frameworks */,
 				95156CD220D9543B003DD2B4 /* Resources */,
+				2C71338460780C39FE3C6AB5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,35 +285,95 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950982F520DAC970005B2E8D /* Podfile in Resources */,
 				95156CE220D9543E003DD2B4 /* LaunchScreen.storyboard in Resources */,
 				95156CDF20D9543E003DD2B4 /* Assets.xcassets in Resources */,
-				95156CDD20D9543B003DD2B4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C71338460780C39FE3C6AB5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TestLocationService/Pods-TestLocationService-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestLocationService/Pods-TestLocationService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C689E55439539BEA643E949 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestLocationService-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		95156CD020D9543B003DD2B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95156CDA20D9543B003DD2B4 /* ViewController.swift in Sources */,
+				95156CF920DA3529003DD2B4 /* TabBarViewController.swift in Sources */,
+				9598AA0020DEF8240077A358 /* DeviceManager.swift in Sources */,
+				9598A9EE20DE680D0077A358 /* LocationManager.swift in Sources */,
+				9598A9F220DEA40E0077A358 /* SettingsPresenter.swift in Sources */,
+				95156CEA20D99D72003DD2B4 /* DebugViewController.swift in Sources */,
+				95156CEE20D99FB1003DD2B4 /* ReuseIdentifierProtocol.swift in Sources */,
+				9598AA0B20DF01410077A358 /* DescriptionConfigurer.swift in Sources */,
+				9598A9EB20DE5E7F0077A358 /* MapConfigurer.swift in Sources */,
+				9598AA0220DEFF7E0077A358 /* DescriptionTableViewController.swift in Sources */,
+				95156CEC20D99F3B003DD2B4 /* DebugCell.swift in Sources */,
+				9598A9FE20DEF06B0077A358 /* DebugModels.swift in Sources */,
+				9598A9F620DEED9C0077A358 /* DebugPresenter.swift in Sources */,
+				9598A9FC20DEEE360077A358 /* DebugConfigurer.swift in Sources */,
+				9598AA0420DEFFB70077A358 /* DescriptionCell.swift in Sources */,
+				957821C520E1104F00511172 /* PresetCell.swift in Sources */,
+				9598A9F020DEA3680077A358 /* SettingsConfigurer.swift in Sources */,
 				95156CD820D9543B003DD2B4 /* AppDelegate.swift in Sources */,
+				9598A9E920DE5E720077A358 /* MapInteractor.swift in Sources */,
+				95156CF720DA33C7003DD2B4 /* MapViewController.swift in Sources */,
+				9598A9FA20DEEE0C0077A358 /* DebugRouter.swift in Sources */,
+				950982F720DACBC1005B2E8D /* Consts.swift in Sources */,
+				9598AA0E20DF24640077A358 /* Assambler.swift in Sources */,
+				9598AA0920DF008E0077A358 /* DescriptionInteractor.swift in Sources */,
+				950982F220DAC1DD005B2E8D /* SettingCell.swift in Sources */,
+				950982F020DAC1C4005B2E8D /* SettingsViewController.swift in Sources */,
+				9598AA0720DF00670077A358 /* DescriptionPresenter.swift in Sources */,
+				9598A9E720DE5E670077A358 /* MapPresenter.swift in Sources */,
+				9598A9F820DEEDD00077A358 /* DebugInteractor.swift in Sources */,
+				9598A9F420DEA45F0077A358 /* SettingsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		95156CDB20D9543B003DD2B4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95156CDC20D9543B003DD2B4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		95156CE020D9543E003DD2B4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -278,11 +501,13 @@
 		};
 		95156CE720D9543E003DD2B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8207D7FA6F1E09601D0F411 /* Pods-TestLocationService.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M48S3Y65RF;
 				INFOPLIST_FILE = TestLocationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,11 +521,13 @@
 		};
 		95156CE820D9543E003DD2B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B278D51CD1451CA3AF6C9A7C /* Pods-TestLocationService.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M48S3Y65RF;
 				INFOPLIST_FILE = TestLocationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
