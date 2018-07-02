@@ -19,6 +19,14 @@
 		95156CEE20D99FB1003DD2B4 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95156CED20D99FB1003DD2B4 /* ReuseIdentifierProtocol.swift */; };
 		95156CF720DA33C7003DD2B4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95156CF620DA33C7003DD2B4 /* MapViewController.swift */; };
 		95156CF920DA3529003DD2B4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95156CF820DA3529003DD2B4 /* TabBarViewController.swift */; };
+		954F17BC20E911DC0057B613 /* NSUIColor + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F17BB20E911DC0057B613 /* NSUIColor + extensions.swift */; };
+		956624C620EA4A2900751044 /* BatteryHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624C520EA4A2900751044 /* BatteryHistory.swift */; };
+		956624C820EA4A4000751044 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624C720EA4A4000751044 /* Battery.swift */; };
+		956624CA20EA4A5F00751044 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624C920EA4A5F00751044 /* Location.swift */; };
+		956624CC20EA4A7A00751044 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624CB20EA4A7A00751044 /* Preset.swift */; };
+		956624CE20EA4AEB00751044 /* Consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624CD20EA4AEB00751044 /* Consumption.swift */; };
+		956624D020EA4AFC00751044 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624CF20EA4AFC00751044 /* Chart.swift */; };
+		956624D220EA4B1600751044 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624D120EA4B1600751044 /* Errors.swift */; };
 		957821C520E1104F00511172 /* PresetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957821C420E1104F00511172 /* PresetCell.swift */; };
 		9598A9E720DE5E670077A358 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9E620DE5E670077A358 /* MapPresenter.swift */; };
 		9598A9E920DE5E720077A358 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9E820DE5E720077A358 /* MapInteractor.swift */; };
@@ -31,7 +39,6 @@
 		9598A9F820DEEDD00077A358 /* DebugInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9F720DEEDD00077A358 /* DebugInteractor.swift */; };
 		9598A9FA20DEEE0C0077A358 /* DebugRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9F920DEEE0C0077A358 /* DebugRouter.swift */; };
 		9598A9FC20DEEE360077A358 /* DebugConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9FB20DEEE360077A358 /* DebugConfigurer.swift */; };
-		9598A9FE20DEF06B0077A358 /* DebugModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9FD20DEF06B0077A358 /* DebugModels.swift */; };
 		9598AA0020DEF8240077A358 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9FF20DEF8240077A358 /* DeviceManager.swift */; };
 		9598AA0220DEFF7E0077A358 /* DescriptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0120DEFF7E0077A358 /* DescriptionTableViewController.swift */; };
 		9598AA0420DEFFB70077A358 /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0320DEFFB70077A358 /* DescriptionCell.swift */; };
@@ -39,6 +46,12 @@
 		9598AA0920DF008E0077A358 /* DescriptionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0820DF008E0077A358 /* DescriptionInteractor.swift */; };
 		9598AA0B20DF01410077A358 /* DescriptionConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0A20DF01410077A358 /* DescriptionConfigurer.swift */; };
 		9598AA0E20DF24640077A358 /* Assambler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AA0D20DF24640077A358 /* Assambler.swift */; };
+		95A88B4520E800490003B96E /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A88B4420E800490003B96E /* ChartsViewController.swift */; };
+		95A88B4720E818130003B96E /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A88B4620E818130003B96E /* ChartCell.swift */; };
+		95A88B4920E835300003B96E /* UserDefaults + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A88B4820E835300003B96E /* UserDefaults + extensions.swift */; };
+		95A88B4C20E857E20003B96E /* ChartsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A88B4B20E857E20003B96E /* ChartsPresenter.swift */; };
+		95A88B4E20E858270003B96E /* ChartsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A88B4D20E858270003B96E /* ChartsInteractor.swift */; };
+		95A88B5020E858680003B96E /* ChartsConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A88B4F20E858680003B96E /* ChartsConfigurer.swift */; };
 		95B98A1E20E18BD6006B75CA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B98A1D20E18BD6006B75CA /* DataManager.swift */; };
 		F4C02954E1AD8CD06552BAAE /* libPods-TestLocationService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C059BCF68EEB5FD0ABBA393 /* libPods-TestLocationService.a */; };
 /* End PBXBuildFile section */
@@ -47,7 +60,7 @@
 		1C059BCF68EEB5FD0ABBA393 /* libPods-TestLocationService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestLocationService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		950982EF20DAC1C4005B2E8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		950982F120DAC1DD005B2E8D /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
-		950982F420DAC970005B2E8D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		950982F420DAC970005B2E8D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		950982F620DACBC1005B2E8D /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		95156CD420D9543B003DD2B4 /* TestLocationService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestLocationService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95156CD720D9543B003DD2B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +72,14 @@
 		95156CED20D99FB1003DD2B4 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
 		95156CF620DA33C7003DD2B4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		95156CF820DA3529003DD2B4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		954F17BB20E911DC0057B613 /* NSUIColor + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor + extensions.swift"; sourceTree = "<group>"; };
+		956624C520EA4A2900751044 /* BatteryHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistory.swift; sourceTree = "<group>"; };
+		956624C720EA4A4000751044 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
+		956624C920EA4A5F00751044 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		956624CB20EA4A7A00751044 /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
+		956624CD20EA4AEB00751044 /* Consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumption.swift; sourceTree = "<group>"; };
+		956624CF20EA4AFC00751044 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		956624D120EA4B1600751044 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		957821C420E1104F00511172 /* PresetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCell.swift; sourceTree = "<group>"; };
 		9598A9E620DE5E670077A358 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		9598A9E820DE5E720077A358 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
@@ -71,7 +92,6 @@
 		9598A9F720DEEDD00077A358 /* DebugInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugInteractor.swift; sourceTree = "<group>"; };
 		9598A9F920DEEE0C0077A358 /* DebugRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugRouter.swift; sourceTree = "<group>"; };
 		9598A9FB20DEEE360077A358 /* DebugConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugConfigurer.swift; sourceTree = "<group>"; };
-		9598A9FD20DEF06B0077A358 /* DebugModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugModels.swift; sourceTree = "<group>"; };
 		9598A9FF20DEF8240077A358 /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		9598AA0120DEFF7E0077A358 /* DescriptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewController.swift; sourceTree = "<group>"; };
 		9598AA0320DEFFB70077A358 /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
@@ -79,6 +99,12 @@
 		9598AA0820DF008E0077A358 /* DescriptionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionInteractor.swift; sourceTree = "<group>"; };
 		9598AA0A20DF01410077A358 /* DescriptionConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionConfigurer.swift; sourceTree = "<group>"; };
 		9598AA0D20DF24640077A358 /* Assambler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assambler.swift; sourceTree = "<group>"; };
+		95A88B4420E800490003B96E /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		95A88B4620E818130003B96E /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		95A88B4820E835300003B96E /* UserDefaults + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + extensions.swift"; sourceTree = "<group>"; };
+		95A88B4B20E857E20003B96E /* ChartsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPresenter.swift; sourceTree = "<group>"; };
+		95A88B4D20E858270003B96E /* ChartsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsInteractor.swift; sourceTree = "<group>"; };
+		95A88B4F20E858680003B96E /* ChartsConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsConfigurer.swift; sourceTree = "<group>"; };
 		95B98A1D20E18BD6006B75CA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B278D51CD1451CA3AF6C9A7C /* Pods-TestLocationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestLocationService.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestLocationService/Pods-TestLocationService.release.xcconfig"; sourceTree = "<group>"; };
 		B8207D7FA6F1E09601D0F411 /* Pods-TestLocationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestLocationService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestLocationService/Pods-TestLocationService.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,12 +164,12 @@
 		95156CD620D9543B003DD2B4 /* TestLocationService */ = {
 			isa = PBXGroup;
 			children = (
+				956624C420EA49D600751044 /* Models */,
 				9598AA0C20DF24300077A358 /* Utils */,
 				9598A9EC20DE67F70077A358 /* Managers */,
 				95156CD720D9543B003DD2B4 /* AppDelegate.swift */,
 				95156CF820DA3529003DD2B4 /* TabBarViewController.swift */,
 				95156CF520DA3162003DD2B4 /* Map */,
-				9598AA0520DEFFE80077A358 /* Description */,
 				95156CF420D9C976003DD2B4 /* Debug */,
 				950982F320DAC1E8005B2E8D /* Settings */,
 				95156CDE20D9543E003DD2B4 /* Assets.xcassets */,
@@ -156,7 +182,9 @@
 		95156CF420D9C976003DD2B4 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
-				95156CEB20D99F3B003DD2B4 /* DebugCell.swift */,
+				95A88B4120E7FD0D0003B96E /* Charts */,
+				9598AA0520DEFFE80077A358 /* Description */,
+				95A88B3F20E7F4990003B96E /* Cells */,
 				95156CE920D99D72003DD2B4 /* DebugViewController.swift */,
 				9598A9F520DEED9C0077A358 /* DebugPresenter.swift */,
 				9598A9F720DEEDD00077A358 /* DebugInteractor.swift */,
@@ -175,6 +203,20 @@
 				9598A9EA20DE5E7F0077A358 /* MapConfigurer.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		956624C420EA49D600751044 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				956624C520EA4A2900751044 /* BatteryHistory.swift */,
+				956624C720EA4A4000751044 /* Battery.swift */,
+				956624C920EA4A5F00751044 /* Location.swift */,
+				956624CB20EA4A7A00751044 /* Preset.swift */,
+				956624CD20EA4AEB00751044 /* Consumption.swift */,
+				956624CF20EA4AFC00751044 /* Chart.swift */,
+				956624D120EA4B1600751044 /* Errors.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		957821C320E0FDCF00511172 /* Cells */ = {
@@ -199,7 +241,7 @@
 		9598AA0520DEFFE80077A358 /* Description */ = {
 			isa = PBXGroup;
 			children = (
-				9598AA0320DEFFB70077A358 /* DescriptionCell.swift */,
+				95A88B4020E7F4A70003B96E /* Cells */,
 				9598AA0120DEFF7E0077A358 /* DescriptionTableViewController.swift */,
 				9598AA0620DF00670077A358 /* DescriptionPresenter.swift */,
 				9598AA0820DF008E0077A358 /* DescriptionInteractor.swift */,
@@ -211,12 +253,49 @@
 		9598AA0C20DF24300077A358 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9598A9FD20DEF06B0077A358 /* DebugModels.swift */,
 				950982F620DACBC1005B2E8D /* Consts.swift */,
 				95156CED20D99FB1003DD2B4 /* ReuseIdentifierProtocol.swift */,
 				9598AA0D20DF24640077A358 /* Assambler.swift */,
+				95A88B4A20E835370003B96E /* Extensions */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		95A88B3F20E7F4990003B96E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				95156CEB20D99F3B003DD2B4 /* DebugCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		95A88B4020E7F4A70003B96E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9598AA0320DEFFB70077A358 /* DescriptionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		95A88B4120E7FD0D0003B96E /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				95A88B4620E818130003B96E /* ChartCell.swift */,
+				95A88B4420E800490003B96E /* ChartsViewController.swift */,
+				95A88B4B20E857E20003B96E /* ChartsPresenter.swift */,
+				95A88B4D20E858270003B96E /* ChartsInteractor.swift */,
+				95A88B4F20E858680003B96E /* ChartsConfigurer.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		95A88B4A20E835370003B96E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95A88B4820E835300003B96E /* UserDefaults + extensions.swift */,
+				954F17BB20E911DC0057B613 /* NSUIColor + extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D796179BB86DB5AAB39956AE /* Pods */ = {
@@ -240,6 +319,7 @@
 				95156CD120D9543B003DD2B4 /* Frameworks */,
 				95156CD220D9543B003DD2B4 /* Resources */,
 				2C71338460780C39FE3C6AB5 /* [CP] Copy Pods Resources */,
+				95A88B3320E7BBDC0003B96E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -335,6 +415,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		95A88B3320E7BBDC0003B96E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#${PODS_ROOT}/SwiftLint/swiftlint";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -342,33 +435,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956624C820EA4A4000751044 /* Battery.swift in Sources */,
+				95A88B4720E818130003B96E /* ChartCell.swift in Sources */,
+				956624CA20EA4A5F00751044 /* Location.swift in Sources */,
 				95156CF920DA3529003DD2B4 /* TabBarViewController.swift in Sources */,
+				956624C620EA4A2900751044 /* BatteryHistory.swift in Sources */,
 				95B98A1E20E18BD6006B75CA /* DataManager.swift in Sources */,
 				9598AA0020DEF8240077A358 /* DeviceManager.swift in Sources */,
 				9598A9EE20DE680D0077A358 /* LocationManager.swift in Sources */,
 				9598A9F220DEA40E0077A358 /* SettingsPresenter.swift in Sources */,
+				95A88B4E20E858270003B96E /* ChartsInteractor.swift in Sources */,
+				95A88B4920E835300003B96E /* UserDefaults + extensions.swift in Sources */,
 				95156CEA20D99D72003DD2B4 /* DebugViewController.swift in Sources */,
 				95156CEE20D99FB1003DD2B4 /* ReuseIdentifierProtocol.swift in Sources */,
 				9598AA0B20DF01410077A358 /* DescriptionConfigurer.swift in Sources */,
 				9598A9EB20DE5E7F0077A358 /* MapConfigurer.swift in Sources */,
 				9598AA0220DEFF7E0077A358 /* DescriptionTableViewController.swift in Sources */,
 				95156CEC20D99F3B003DD2B4 /* DebugCell.swift in Sources */,
-				9598A9FE20DEF06B0077A358 /* DebugModels.swift in Sources */,
+				95A88B4C20E857E20003B96E /* ChartsPresenter.swift in Sources */,
 				9598A9F620DEED9C0077A358 /* DebugPresenter.swift in Sources */,
 				9598A9FC20DEEE360077A358 /* DebugConfigurer.swift in Sources */,
 				9598AA0420DEFFB70077A358 /* DescriptionCell.swift in Sources */,
 				957821C520E1104F00511172 /* PresetCell.swift in Sources */,
 				9598A9F020DEA3680077A358 /* SettingsConfigurer.swift in Sources */,
 				95156CD820D9543B003DD2B4 /* AppDelegate.swift in Sources */,
+				956624D020EA4AFC00751044 /* Chart.swift in Sources */,
+				95A88B5020E858680003B96E /* ChartsConfigurer.swift in Sources */,
 				9598A9E920DE5E720077A358 /* MapInteractor.swift in Sources */,
 				95156CF720DA33C7003DD2B4 /* MapViewController.swift in Sources */,
 				9598A9FA20DEEE0C0077A358 /* DebugRouter.swift in Sources */,
 				950982F720DACBC1005B2E8D /* Consts.swift in Sources */,
+				956624CC20EA4A7A00751044 /* Preset.swift in Sources */,
 				9598AA0E20DF24640077A358 /* Assambler.swift in Sources */,
 				9598AA0920DF008E0077A358 /* DescriptionInteractor.swift in Sources */,
+				954F17BC20E911DC0057B613 /* NSUIColor + extensions.swift in Sources */,
+				95A88B4520E800490003B96E /* ChartsViewController.swift in Sources */,
 				950982F220DAC1DD005B2E8D /* SettingCell.swift in Sources */,
 				950982F020DAC1C4005B2E8D /* SettingsViewController.swift in Sources */,
+				956624CE20EA4AEB00751044 /* Consumption.swift in Sources */,
 				9598AA0720DF00670077A358 /* DescriptionPresenter.swift in Sources */,
+				956624D220EA4B1600751044 /* Errors.swift in Sources */,
 				9598A9E720DE5E670077A358 /* MapPresenter.swift in Sources */,
 				9598A9F820DEEDD00077A358 /* DebugInteractor.swift in Sources */,
 				9598A9F420DEA45F0077A358 /* SettingsInteractor.swift in Sources */,
@@ -440,7 +546,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -494,7 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -511,7 +617,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M48S3Y65RF;
 				INFOPLIST_FILE = TestLocationService/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -519,7 +625,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mywork.TestLocationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -531,7 +637,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M48S3Y65RF;
 				INFOPLIST_FILE = TestLocationService/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,7 +645,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mywork.TestLocationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

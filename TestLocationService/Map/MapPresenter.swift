@@ -10,25 +10,26 @@ import Foundation
 import GoogleMaps
 
 protocol MapPresenterProtocol: MapLogicOutputProtocol, MapInteractorOutputProtocol {
-    
+
 }
 
 class MapPresenter: MapPresenterProtocol {
-
+    // MARK: - Properties
     weak var view: MapLogicInputProtocol?
     var interactor: MapInteractorInputProtocol?
 
+    // MARK: - Functions
     func performMapView() {
         interactor?.fetchMapInfoToDisplay()
     }
-    
+
     func provideLastLocation(zoom: Float, cameraPosition: CLLocation) {
         let camera = GMSCameraPosition.camera(withLatitude: cameraPosition.coordinate.latitude,
                                               longitude: cameraPosition.coordinate.longitude,
                                               zoom: zoom)
         view?.displayUserLocation(zoom: zoom, cameraPosition: camera)
     }
-    
+
     func tappedMonitoringButton() {
         interactor?.shouldMonitoringUserLocation(complition: { (active, location) in
             if active, let loc = location {
@@ -39,20 +40,16 @@ class MapPresenter: MapPresenterProtocol {
             }
         })
     }
-    
+
     func tappedIncreasesButton() {
         interactor?.increasesZoom()
     }
-    
+
     func tappedDecreasesButton() {
         interactor?.decreasesZoom()
     }
+
     func providedZoom(_ zoom: Float) {
         view?.displayZoom(zoom)
-    }
-
-    
-    func setupMapView() {
-//        camera = GMSCameraPosition.camera(withLatitude: Consts.LocationDegrees.latitude.rawValue, longitude: Consts.LocationDegrees.longitude.rawValue, zoom: zoomLevel)
     }
 }

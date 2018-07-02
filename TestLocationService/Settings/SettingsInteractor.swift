@@ -13,23 +13,25 @@ protocol SettingsInteractorOutputProtocol: class {
 }
 protocol SettingsInteractorInputProtocol: class {
     func updateLocationSettings(accuracy: LocationManager.Accuracy, distance: LocationManager.DistanceFilter)
-    func fetchSettings(_ complition: ([Preset]) -> ())
+    func fetchSettings(_ complition: ([Preset]) -> Void)
     func changeSettingsOfLocationManager(index: Int)
 }
 
 class SettingsInteractor: SettingsInteractorInputProtocol {
 
+    // MARK: - Properties
     weak var presenter: SettingsInteractorOutputProtocol?
     var locationManager: LocationProtocol?
 
-    //TODO: сделать нормально
+    // TODO: сделать нормально
     var arrayOfSettings: [Preset] = []
-    
+
+    // MARK: - Functions
     func updateLocationSettings(accuracy: LocationManager.Accuracy, distance: LocationManager.DistanceFilter) {
         LocationManager.sharedInstance.setAccuracy(accuracy: accuracy)
         LocationManager.sharedInstance.setDistanceFilter(distance: distance)
     }
-    func fetchSettings(_ complition: ([Preset]) -> ()) {
+    func fetchSettings(_ complition: ([Preset]) -> Void) {
         self.arrayOfSettings = DataManager.sharedInstance.fetchSettings()
         complition(arrayOfSettings)
     }

@@ -9,18 +9,20 @@
 import Foundation
 
 class DescriptionConfigurer {
-    
+
+    // MARK: - Properties
     static let sharedInstance = DescriptionConfigurer()
-    
+
+    // MARK: - Functions
     func configure(view: DescriptionTableViewController) {
         let presenter = DescriptionPresenter()
         let interactor = DescriptionInteractor()
-                
+
         view.presenter = presenter
-        
+
         presenter.view = view
         presenter.interactor = interactor
-        
+
         interactor.presenter = presenter
     }
 }

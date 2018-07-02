@@ -9,19 +9,26 @@
 import UIKit
 
 protocol DebugPresenterProtocol: DebugViewOutputProtocol, DebugInteractorOutputProtocol {
-    
+
 }
 
 class DebugPresenter: DebugPresenterProtocol {
-    
+
+    // MARK: - Properties
     weak var view: DebugViewInputProtocol?
     var interactor: DebugInteractorInputProtocol?
     var router: DebugRouterProtocol?
-    
+
+    // MARK: - Navigation functions
     func navigateToDebugDetail() {
         router?.navigateToDebugDetail()
     }
-    
+
+    func navigateToCharts() {
+        router?.navigateToCharts()
+    }
+
+    // MARK: - Function of pass data to next scene
     func passDataToNextScene(segue: UIStoryboardSegue) {
         router?.passDataToNextScene(segue: segue)
     }

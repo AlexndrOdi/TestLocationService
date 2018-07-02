@@ -9,15 +9,13 @@
 import Foundation
 
 protocol DebugInteractorInputProtocol: class {
-    
+
 }
 protocol DebugInteractorOutputProtocol: class {
-    
+
 }
 
 class DebugInteractor: DebugInteractorInputProtocol {
-    
+
     weak var presenter: DebugInteractorOutputProtocol?
-    
-    
 }

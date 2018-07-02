@@ -23,10 +23,10 @@ protocol MapLogicInputProtocol: class {
 }
 
 class MapViewController: UIViewController, MapLogicInputProtocol {
-
+    // MARK: - Properties
     var presenter: MapLogicOutputProtocol?
-    
-    //Views
+
+    // MARK: - Views
     //--------------------------------------------------
     let increaseButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -69,69 +69,77 @@ class MapViewController: UIViewController, MapLogicInputProtocol {
         button.layer.cornerRadius = 22
         return button
     }()
-    
+    // MARK: - MapView
     var mapView: GMSMapView = {
-        GMSServices.provideAPIKey(Consts.APIKeys.GoogleMaps.rawValue)
+        GMSServices.provideAPIKey(Consts.APIKeys.googleMaps.rawValue)
         let view = GMSMapView()
         view.mapType = .normal
         view.settings.myLocationButton = true
         view.settings.zoomGestures = true
         view.isMyLocationEnabled = true
+
         view.setMinZoom(kGMSMinZoomLevel, maxZoom: 20)
         return view
     }()
     //--------------------------------------------------
 
-    private func initMapView(){
+    // MARK: - Private functions
+    private func initMapView() {
         increaseButton.addTarget(self, action: #selector(tappedIncreaseButton), for: .touchUpInside)
         decreaseButton.addTarget(self, action: #selector(tappedDecreasesButton), for: .touchUpInside)
         monitoringButton.addTarget(self, action: #selector(startMonitoringUserLocation), for: .touchUpInside)
-        
+
         verticalStack.addArrangedSubview(increaseButton)
         verticalStack.addArrangedSubview(decreaseButton)
         mapView.addSubview(verticalStack)
         mapView.addSubview(monitoringButton)
-        
-        let centerY = NSLayoutConstraint(item: verticalStack, attribute: .centerY, relatedBy: .equal, toItem: mapView, attribute: .centerY, multiplier: 1, constant: 0)
-        let right = NSLayoutConstraint(item: verticalStack, attribute: .trailing, relatedBy: .equal, toItem: mapView, attribute: .trailing, multiplier: 1, constant: -16)
-        
-        let leftMonitor = NSLayoutConstraint(item: monitoringButton, attribute: .leading, relatedBy: .equal, toItem: mapView, attribute: .leading, multiplier: 1, constant: 16)
-        let bottomMonitor = NSLayoutConstraint(item: monitoringButton, attribute: .bottom, relatedBy: .equal, toItem: mapView, attribute: .bottom, multiplier: 1, constant: -80)
-        
+
+        let centerY = NSLayoutConstraint(item: verticalStack, attribute: .centerY, relatedBy: .equal,
+                                         toItem: mapView, attribute: .centerY, multiplier: 1, constant: 0)
+        let right = NSLayoutConstraint(item: verticalStack, attribute: .trailing, relatedBy: .equal,
+                                       toItem: mapView, attribute: .trailing, multiplier: 1, constant: -16)
+
+        let leftMonitor = NSLayoutConstraint(item: monitoringButton, attribute: .leading, relatedBy: .equal,
+                                             toItem: mapView, attribute: .leading, multiplier: 1, constant: 16)
+        let bottomMonitor = NSLayoutConstraint(item: monitoringButton, attribute: .bottom, relatedBy: .equal,
+                                               toItem: mapView, attribute: .bottom, multiplier: 1, constant: -80)
+
         mapView.addConstraints([centerY, right,
                                 leftMonitor, bottomMonitor])
-    
+
         self.view = mapView
     }
     @objc private func startMonitoringUserLocation() {
         presenter?.tappedMonitoringButton()
     }
-    
+
     @objc private func tappedIncreaseButton() {
         presenter?.tappedIncreasesButton()
     }
     @objc private func tappedDecreasesButton() {
         presenter?.tappedDecreasesButton()
     }
-    func displayZoom(_ zoom: Float) {
-        mapView.animate(toZoom: zoom)
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         MapConfigurer.sharedInstance.configure(view: self)
-        navigationItem.title = Consts.NavigationTitle.Map.rawValue
+        navigationItem.title = Consts.NavigationTitle.map.rawValue
         mapView.delegate = self
         initMapView()
-        
+
         presenter?.performMapView()
     }
-    
+
+    // MARK: - Functions
+    func displayZoom(_ zoom: Float) {
+        mapView.animate(toZoom: zoom)
+    }
+
     func displayUserLocation(zoom: Float, cameraPosition: GMSCameraPosition) {
         mapView.animate(to: cameraPosition)
     }
 }
 
 extension MapViewController: GMSMapViewDelegate {
-    
+    // MARK: - MapViewDelegate functions
 }

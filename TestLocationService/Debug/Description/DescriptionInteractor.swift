@@ -9,7 +9,6 @@
 import Foundation
 
 protocol DescriptionInteractorInputProtocol: class {
-    func fetchAllInformation(complition: @escaping ([Battery]) -> ())
     func fetchInformationByTimer()
 }
 protocol DescriptionInteractorOutputProtocol: class {
@@ -17,41 +16,22 @@ protocol DescriptionInteractorOutputProtocol: class {
 }
 
 class DescriptionInteractor: DescriptionInteractorInputProtocol {
-    
+    // MARK: - Properties
     weak var presenter: DescriptionInteractorOutputProtocol?
-    
+
     var infoBatteryArray: [Battery] = []
     var lastFetchedData = Set<BatteryHistory>()
-    
-    var dateFormater: DateFormatter = {
-        let formater = DateFormatter()
-        formater.dateStyle = .medium
-        formater.timeStyle = .short
-        return formater
-    }()
-    
-    func fetchAllInformation(complition: @escaping ([Battery]) -> ()) {
-        DispatchQueue.main.async {
-            DeviceManager.sharedInstance.currentBatteryCharge(complition: { (charge) in
-                
-                let formattedDate = self.dateFormater.string(from: Date())
-                let formattedCharge = String(describing: (charge * 100)) + "%"
-                self.infoBatteryArray.append(Battery(date: formattedDate, charge: formattedCharge))
-            })
-            complition(self.infoBatteryArray)
-        }
-    }
-    
+
+    // MARK: - Functions
     func fetchInformationByTimer() {
         let fetchedData = DeviceManager.sharedInstance.allHistoryBatteryUsage()
         let subtrack = fetchedData.subtracting(self.lastFetchedData)
         subtrack.forEach({ (item) in
-            let date = self.dateFormater.string(from: item.date)
+            let time = String(describing: item.time) + "sec"
             let charge = String(describing: item.charge * 100) + "%"
-            self.infoBatteryArray.append(Battery(date: date, charge: charge))
+            self.infoBatteryArray.append(Battery(date: time, charge: charge))
         })
         self.lastFetchedData = fetchedData
         self.presenter?.provideAllInformationByTimer(array: self.infoBatteryArray.sorted(by: { $0.date < $1.date }))
     }
-    
 }

@@ -1,23 +1,22 @@
 //
-//  MapConfigurer.swift
+//  ChartsConfigurer.swift
 //  TestLocationService
 //
-//  Created by Alex Odintsov on 23.06.2018.
+//  Created by Alex Odintsov on 01.07.2018.
 //  Copyright © 2018 Alex Odintsov. All rights reserved.
 //
 
 import Foundation
 
-class MapConfigurer {
+class ChartsConfigurer {
 
     // MARK: - Properties
-    static let sharedInstance = MapConfigurer()
+    static let sharedInstance = ChartsConfigurer()
 
     // MARK: - Functions
-    func configure(view: MapViewController) {
-
-        let presenter = MapPresenter()
-        let interactor = MapInteractor()
+    func configure(view: ChartsViewController) {
+        let presenter = ChartsPresenter()
+        let interactor = ChartsInteractor()
 
         view.presenter = presenter
 

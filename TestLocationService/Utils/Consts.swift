@@ -8,24 +8,29 @@
 
 import UIKit
 
-enum Consts {
+struct Consts {
+    // MARK: - APIKeys
     enum APIKeys: String {
-        case GoogleMaps = "AIzaSyBYYhsn7nRypQHSszeGTIPLbrgYsw81uME"
+        case googleMaps = "AIzaSyBYYhsn7nRypQHSszeGTIPLbrgYsw81uME"
     }
+    // MARK: - Degress
     enum LocationDegrees: Double {
         case longitude = 30.277974
         case latitude = 59.942934
     }
-    
+    // MARK: - Settings name
     enum SettingNames: String {
         case accuracy = "Точность"
         case delay = "Таймер"
     }
-    enum Buttons {
+
+    struct Buttons {
+        // MARK: - Buttons names
         enum Text: String {
             case done = "Готово"
             case cancel = "Отмена"
         }
+        // MARK: - Buttons images
         enum Image {
             case increase, decrease, monitoringNavigation
             func draw() -> UIImage {
@@ -40,28 +45,17 @@ enum Consts {
             }
         }
     }
-    enum Placeholder: String {
-        case defaultText = "По умолчанию"
-    }
+    // MARK: - NavigationBar titles
     enum NavigationTitle: String {
-        case Map = "Карта"
-        case Debug = "Debug"
-        case Settings = "Настройки"
+        case map = "Карта"
+        case debug = "Debug"
+        case settings = "Настройки"
     }
+    // TODO: - switch with actual
     enum DebugButtons: String {
         case battary = "Расход батареи"
         case location = "Локации"
         case numberOfReqests = "Количество запросов в минуту"
         case something = "Что-то еще"
     }
-    enum Timer {
-        enum Battery: Double {
-            case everyHour = 3600
-            case every30min = 1800
-            case every10min = 600
-            case every5min = 300
-            case everyMin = 60
-        }
-    }
 }
-

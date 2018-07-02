@@ -9,19 +9,21 @@
 import Foundation
 
 class SettingsConfigurer {
-    
+
+    // MARK: - Properties
     static let sharedInstance = SettingsConfigurer()
-    
+
+    // MARK: - Functions
     func configure(view: SettingsViewController) {
-        
+
         let presenter = SettingsPresenter()
         let interactor = SettingsInteractor()
-        
+
         view.presenter = presenter
-        
+
         presenter.view = view
         presenter.interactor = interactor
-        
+
         interactor.presenter = presenter
     }
 }

@@ -9,48 +9,48 @@
 import Foundation
 import CoreLocation
 
-protocol LocationProtocol {
+protocol LocationProtocol: class {
     func updateCurrentLocation(_ location: CLLocation)
-//    func requestLocation(_ completion: (CLLocation?) -> ())
-//    func setUpdateTimer(timer: Int)
-//    func setAccuracy(accuracy: LocationManager.Accuracy)
 }
 
 class LocationManager: NSObject {
-    
+
+    // MARK: - Properties
     static let sharedInstance = LocationManager()
-    
+
     var locationManager: CLLocationManager
     var currentAccuracy: CLLocationAccuracy
-    
-    var timeInteravel: Double
-    
-    var delegate: LocationProtocol?
-    
+    var currentDistance: CLLocationDistance
+
+    weak var delegate: LocationProtocol?
+
+    // MARK: - Init
     private override init() {
         self.locationManager = CLLocationManager()
         self.currentAccuracy = kCLLocationAccuracyBest
-        self.timeInteravel = 10
+        self.currentDistance = DistanceFilter.tenMeters.setDistance()
         super.init()
         self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = currentAccuracy
+        self.locationManager.distanceFilter = currentDistance
     }
-    
-    //Settings
+
+    // MARK: - Settings functions
     func setDistanceFilter(distance: LocationManager.DistanceFilter) {
         locationManager.distanceFilter = distance.setDistance()
     }
-    
-    func setUpdateTimer(timer: Int){
-        self.timeInteravel = Double(timer)
-    }
-    
-    func setAccuracy(accuracy: Accuracy){
-//        locationManager.delegate = self
+
+    func setAccuracy(accuracy: Accuracy) {
         currentAccuracy = accuracy.setAccuracy()
         locationManager.desiredAccuracy = currentAccuracy
         locationManager.startUpdatingLocation()
     }
     
+    func currentSettings() -> (CLLocationAccuracy, CLLocationDistance) {
+        return (locationManager.desiredAccuracy, locationManager.distanceFilter)
+    }
+
+    // MARK: - Request auth fuction
     private func enableLocationService() -> Bool {
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
@@ -67,11 +67,11 @@ class LocationManager: NSObject {
     }
 }
 extension LocationManager: CLLocationManagerDelegate {
-    
+    // MARK: - LocationManagerDelegate functions
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if enableLocationService() {
             manager.startMonitoringSignificantLocationChanges()
@@ -84,7 +84,7 @@ extension LocationManager: CLLocationManagerDelegate {
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        
+
         delegate?.updateCurrentLocation(location)
         print("manager acc = \(manager.desiredAccuracy)")
         print("manager distance = \(manager.distanceFilter)")
@@ -92,9 +92,10 @@ extension LocationManager: CLLocationManagerDelegate {
 }
 
 extension LocationManager {
+    // MARK: - Accuracy enum
     enum Accuracy {
         case best, bestForNavigation, nearestTenMeters, hundredMeters, killometer, threeKillometers
-        
+
         func setAccuracy() -> CLLocationAccuracy {
             switch self {
             case .best:
@@ -112,10 +113,11 @@ extension LocationManager {
             }
         }
     }
-    
+
+    // MARK: - DistanceFilter enum
     enum DistanceFilter {
         case tenMeters, hundredMeters, fiveHundredMeters, killometer
-        
+
         func setDistance() -> CLLocationDistance {
             switch self {
             case .tenMeters:

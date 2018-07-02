@@ -9,23 +9,25 @@
 import Foundation
 
 class DebugConfigurer {
-    
+
+    // MARK: - Properties
     static let sharedInstance = DebugConfigurer()
-    
+
+    // MARK: - Functions
     func configure(view: DebugViewController) {
         let presenter = DebugPresenter()
         let interactor = DebugInteractor()
         let router = DebugRouter()
-        
+
         view.presenter = presenter
-        
+
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
-        
+
         interactor.presenter = presenter
-        
+
         router.view = view
-        
+
     }
 }
