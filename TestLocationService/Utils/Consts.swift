@@ -54,8 +54,7 @@ struct Consts {
     // TODO: - switch with actual
     enum DebugButtons: String {
         case battary = "Расход батареи"
-        case location = "Локации"
         case numberOfReqests = "Количество запросов в минуту"
-        case something = "Что-то еще"
+        case charts = "Гистограмма"
     }
 }

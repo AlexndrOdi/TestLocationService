@@ -53,3 +53,6 @@ class MapPresenter: MapPresenterProtocol {
         view?.displayZoom(zoom)
     }
 }
+extension MapPresenter {
+    // MARK: - GMSMapViewDelegate functions
+}

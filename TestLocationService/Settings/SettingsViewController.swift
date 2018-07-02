@@ -25,6 +25,23 @@ class SettingsViewController: UITableViewController, SettingsViewInputProtocol {
 
     var array: [Preset] = []
 
+    // MARK: - Views
+    let headerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.lightGray
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        let left = NSLayoutConstraint(item: label, attribute: .leading, relatedBy: .equal,
+                                      toItem: view, attribute: .leading, multiplier: 1, constant: 16)
+        let centerY = NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal,
+                                         toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+        view.addSubview(label)
+        view.addConstraints([left, centerY])
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,21 +75,6 @@ class SettingsViewController: UITableViewController, SettingsViewInputProtocol {
     // MARK: - TableView dataSource and delegate
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 { return nil }
-        let headerView: UIView = {
-            let view = UIView()
-            view.backgroundColor = UIColor.lightGray
-            let label = UILabel()
-            label.textAlignment = .center
-            label.font = UIFont.boldSystemFont(ofSize: 18)
-            label.translatesAutoresizingMaskIntoConstraints = false
-            let left = NSLayoutConstraint(item: label, attribute: .leading, relatedBy: .equal,
-                                          toItem: view, attribute: .leading, multiplier: 1, constant: 16)
-            let centerY = NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal,
-                                             toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
-            view.addSubview(label)
-            view.addConstraints([left, centerY])
-            return view
-        }()
         return headerView
     }
 
@@ -95,14 +97,10 @@ class SettingsViewController: UITableViewController, SettingsViewInputProtocol {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PresetCell.identifier) as? PresetCell else {
             fatalError("The dequeued cell is not an instance of SettingCell")
         }
-
-        cell.accuracyLabel.text = "Точность: " + array[indexPath.section].accuracyName
-        cell.distanceLabel.text = "Дистанция: " + array[indexPath.section].distanceName
-        cell.switcher.tag = indexPath.section
         cell.switcher.addTarget(self, action: #selector(changedStateOfSetting(_:)), for: .valueChanged)
+        cell.switcher.tag = indexPath.section
 
-        cell.switcher.setOn(array[indexPath.section].isActive, animated: true)
-        cell.switcher.isEnabled = !array[indexPath.section].isActive
+        cell.update(array[indexPath.row])
 
         return cell
     }

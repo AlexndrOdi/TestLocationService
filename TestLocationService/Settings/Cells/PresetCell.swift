@@ -57,6 +57,14 @@ class PresetCell: UITableViewCell {
         return switcher
     }()
 
+    // MARK: - Functions
+    func update(_ preset: Preset) {
+        accuracyLabel.text = "Точность: " + preset.accuracyName
+        distanceLabel.text = "Дистанция: " + preset.distanceName
+        
+        switcher.setOn(preset.isActive, animated: true)
+        switcher.isEnabled = !preset.isActive
+    }
     // MARK: - Private functions
     private func setup() {
 

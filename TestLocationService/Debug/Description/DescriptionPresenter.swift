@@ -22,8 +22,8 @@ class DescriptionPresenter: DescriptionPresenterProtocol {
         interactor?.fetchInformationByTimer()
     }
 
-    func provideAllInformationByTimer(array: [Battery]) {
-        view?.displayInformation(info: array)
+    func provideAllInformationByTimer(array: [Battery], settings: (String, String)) {
+        view?.displayInformation(info: array, settings: settings)
     }
 
     // MARK: - Private functions

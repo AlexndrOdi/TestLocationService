@@ -22,7 +22,6 @@ class DescriptionCell: UITableViewCell {
     // MARK: - Views
     var dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "Some time"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
@@ -30,16 +29,50 @@ class DescriptionCell: UITableViewCell {
 
     var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Some description"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 18)
         return label
     }()
 
+    var accuracyName: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textAlignment = .right
+        return label
+    }()
+    var distanceFilterName: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textAlignment = .right
+        return label
+    }()
+    var verticalStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.distribution = .fill
+        stack.spacing = 8
+        return stack
+    }()
+    // MARK: - Functions
+    func update(batteryState: Battery, settingsName: (String, String)) {
+        dateLabel.text = batteryState.date
+        descriptionLabel.text = batteryState.charge
+        accuracyName.text = settingsName.0
+        distanceFilterName.text = settingsName.1
+    }
+
     // MARK: - Private functions
     private func setup() {
         addSubview(dateLabel)
         addSubview(descriptionLabel)
+
+        verticalStack.addArrangedSubview(accuracyName)
+        verticalStack.addArrangedSubview(distanceFilterName)
+
+        addSubview(verticalStack)
+
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]|",
                                                       options: NSLayoutFormatOptions(),
                                                       metrics: nil,
@@ -56,6 +89,11 @@ class DescriptionCell: UITableViewCell {
                                                       options: NSLayoutFormatOptions(),
                                                       metrics: nil,
                                                       views: ["v0": descriptionLabel]))
+        let centerY = NSLayoutConstraint(item: verticalStack, attribute: .centerY, relatedBy: .equal,
+                                         toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        let right = NSLayoutConstraint(item: verticalStack, attribute: .trailing, relatedBy: .equal,
+                                       toItem: self, attribute: .trailing, multiplier: 1, constant: 8)
+        addConstraints([centerY, right])
         isUserInteractionEnabled = false
     }
 }

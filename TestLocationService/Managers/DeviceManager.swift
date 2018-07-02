@@ -22,7 +22,7 @@ class DeviceManager: DeviceManagerProtocol {
     var batteryHistory = Set<BatteryHistory>()
 
     private var batteryLevel: Float
-    private let startDate: Date
+    private var startDate: Date
 
     // MARK: - Init
     private init() {
@@ -36,6 +36,10 @@ class DeviceManager: DeviceManagerProtocol {
     // MARK: - Functions
     func allHistoryBatteryUsage() -> Set<BatteryHistory> {
         return batteryHistory
+    }
+
+    func resetStartTime() {
+        startDate = Date()
     }
 
     func startMonitoringBatteryLevel() {

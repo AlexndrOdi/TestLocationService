@@ -30,6 +30,7 @@ class SettingsInteractor: SettingsInteractorInputProtocol {
     func updateLocationSettings(accuracy: LocationManager.Accuracy, distance: LocationManager.DistanceFilter) {
         LocationManager.sharedInstance.setAccuracy(accuracy: accuracy)
         LocationManager.sharedInstance.setDistanceFilter(distance: distance)
+        DeviceManager.sharedInstance.resetStartTime()
     }
     func fetchSettings(_ complition: ([Preset]) -> Void) {
         self.arrayOfSettings = DataManager.sharedInstance.fetchSettings()
@@ -38,6 +39,7 @@ class SettingsInteractor: SettingsInteractorInputProtocol {
     func changeSettingsOfLocationManager(index: Int) {
         LocationManager.sharedInstance.setAccuracy(accuracy: arrayOfSettings[index].accuracy)
         LocationManager.sharedInstance.setDistanceFilter(distance: arrayOfSettings[index].distance)
+        DeviceManager.sharedInstance.resetStartTime()
         if let itemIndex = self.arrayOfSettings.index(where: { $0.isActive == true }) {
             self.arrayOfSettings[itemIndex].isActive = false
         }

@@ -12,7 +12,7 @@ protocol DescriptionInteractorInputProtocol: class {
     func fetchInformationByTimer()
 }
 protocol DescriptionInteractorOutputProtocol: class {
-    func provideAllInformationByTimer(array: [Battery])
+    func provideAllInformationByTimer(array: [Battery], settings: (String, String))
 }
 
 class DescriptionInteractor: DescriptionInteractorInputProtocol {
@@ -25,6 +25,7 @@ class DescriptionInteractor: DescriptionInteractorInputProtocol {
     // MARK: - Functions
     func fetchInformationByTimer() {
         let fetchedData = DeviceManager.sharedInstance.allHistoryBatteryUsage()
+        let (acc, dist) = LocationManager.sharedInstance.currentSettings()
         let subtrack = fetchedData.subtracting(self.lastFetchedData)
         subtrack.forEach({ (item) in
             let time = String(describing: item.time) + "sec"
@@ -32,6 +33,7 @@ class DescriptionInteractor: DescriptionInteractorInputProtocol {
             self.infoBatteryArray.append(Battery(date: time, charge: charge))
         })
         self.lastFetchedData = fetchedData
-        self.presenter?.provideAllInformationByTimer(array: self.infoBatteryArray.sorted(by: { $0.date < $1.date }))
+        self.presenter?.provideAllInformationByTimer(array: self.infoBatteryArray.sorted(by: { $0.date < $1.date }),
+                                                     settings: (acc.description, dist.description))
     }
 }

@@ -27,6 +27,7 @@
 		956624CE20EA4AEB00751044 /* Consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624CD20EA4AEB00751044 /* Consumption.swift */; };
 		956624D020EA4AFC00751044 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624CF20EA4AFC00751044 /* Chart.swift */; };
 		956624D220EA4B1600751044 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624D120EA4B1600751044 /* Errors.swift */; };
+		956624D420EA7B5C00751044 /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624D320EA7B5C00751044 /* Modelable.swift */; };
 		957821C520E1104F00511172 /* PresetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957821C420E1104F00511172 /* PresetCell.swift */; };
 		9598A9E720DE5E670077A358 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9E620DE5E670077A358 /* MapPresenter.swift */; };
 		9598A9E920DE5E720077A358 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9E820DE5E720077A358 /* MapInteractor.swift */; };
@@ -80,6 +81,7 @@
 		956624CD20EA4AEB00751044 /* Consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumption.swift; sourceTree = "<group>"; };
 		956624CF20EA4AFC00751044 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		956624D120EA4B1600751044 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		956624D320EA7B5C00751044 /* Modelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
 		957821C420E1104F00511172 /* PresetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCell.swift; sourceTree = "<group>"; };
 		9598A9E620DE5E670077A358 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		9598A9E820DE5E720077A358 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				956624CD20EA4AEB00751044 /* Consumption.swift */,
 				956624CF20EA4AFC00751044 /* Chart.swift */,
 				956624D120EA4B1600751044 /* Errors.swift */,
+				956624D320EA7B5C00751044 /* Modelable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				9598A9E720DE5E670077A358 /* MapPresenter.swift in Sources */,
 				9598A9F820DEEDD00077A358 /* DebugInteractor.swift in Sources */,
 				9598A9F420DEA45F0077A358 /* SettingsInteractor.swift in Sources */,
+				956624D420EA7B5C00751044 /* Modelable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

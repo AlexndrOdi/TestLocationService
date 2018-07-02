@@ -76,10 +76,14 @@ class MapViewController: UIViewController, MapLogicInputProtocol {
         view.mapType = .normal
         view.settings.myLocationButton = true
         view.settings.zoomGestures = true
-        view.isMyLocationEnabled = true
-
         view.setMinZoom(kGMSMinZoomLevel, maxZoom: 20)
         return view
+    }()
+    var userMarker: GMSMarker = {
+        let marker = GMSMarker()
+        marker.title = "I'm"
+        marker.isTappable = false
+        return marker
     }()
     //--------------------------------------------------
 
@@ -125,6 +129,7 @@ class MapViewController: UIViewController, MapLogicInputProtocol {
         MapConfigurer.sharedInstance.configure(view: self)
         navigationItem.title = Consts.NavigationTitle.map.rawValue
         mapView.delegate = self
+        userMarker.map = mapView
         initMapView()
 
         presenter?.performMapView()
@@ -136,6 +141,7 @@ class MapViewController: UIViewController, MapLogicInputProtocol {
     }
 
     func displayUserLocation(zoom: Float, cameraPosition: GMSCameraPosition) {
+        userMarker.position = cameraPosition.target
         mapView.animate(to: cameraPosition)
     }
 }

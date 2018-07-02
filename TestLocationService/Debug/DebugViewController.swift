@@ -39,7 +39,7 @@ class DebugViewController: UITableViewController, DebugViewInputProtocol {
 extension DebugViewController {
     // MARK: - TableView dataSource and delegate functions
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,11 +52,9 @@ extension DebugViewController {
         case 0:
             cell.nameLabel.text = Consts.DebugButtons.battary.rawValue
         case 1:
-            cell.nameLabel.text = Consts.DebugButtons.location.rawValue
-        case 2:
             cell.nameLabel.text = Consts.DebugButtons.numberOfReqests.rawValue
-        case 3:
-            cell.nameLabel.text = Consts.DebugButtons.something.rawValue
+        case 2:
+            cell.nameLabel.text = Consts.DebugButtons.charts.rawValue
         default:
             fatalError("Cell presentation not found.")
         }
@@ -74,7 +72,16 @@ extension DebugViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        presenter?.navigateToDebugDetail()
-        presenter?.navigateToCharts()
+        switch indexPath.row {
+        case 0:
+            presenter?.navigateToDebugDetail()
+        case 1:
+        //TODO: ..
+            print("TODO..")
+        case 2:
+            presenter?.navigateToCharts()
+        default:
+            fatalError("Not found index path ad \(indexPath.row) row.")
+        }
     }
 }

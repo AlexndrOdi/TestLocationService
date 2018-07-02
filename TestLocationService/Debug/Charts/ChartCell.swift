@@ -38,17 +38,15 @@ class ChartCell: UITableViewCell {
 
     // MARK: - Functions
     func updateChart(_ consumptions: [Consumption]) {
-        var count: Int = 0
         let data: BarChartData = BarChartData(dataSets: [])
         DispatchQueue.main.async {
             
             consumptions.forEach({ (cons) in
-                let dataEntry = BarChartDataEntry(x: Double(count), y: Double(cons.time))
+                let dataEntry = BarChartDataEntry(x: Double(cons.time), y: Double(cons.charge))
                 let label = "Acc: \(cons.preset.accuracyName), dist: \(cons.preset.distanceName)"
                 let dataSet = BarChartDataSet(values: [dataEntry], label: label)
                 dataSet.setColor(UIColor().colorBy(value: cons.time))
                 data.addDataSet(dataSet)
-                count += 1
             })
             data.barWidth = 1
             self.chart.data = data

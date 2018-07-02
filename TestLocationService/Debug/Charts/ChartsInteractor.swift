@@ -29,11 +29,10 @@ class ChartsInteractor: ChartsInteractorInputProtocol {
             let charts = DataManager.sharedInstance.fetchAllCharts()
             charts.forEach({ (chart) in
                 if chart.history.count >= 15 {
-                    if let last = chart.history.last {
-                        self.consumptions.append(Consumption(preset: chart.preset,
-                                                        time: last.time,
-                                                        charge: last.charge))
-                    }
+                    let neededStore = chart.history[14]
+                    self.consumptions.append(Consumption(preset: chart.preset,
+                                                         time: neededStore.time,
+                                                         charge: neededStore.charge))
                 }
             })
             // TODO: доделать потом очистку

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DescriptionViewInputProtocol: class {
-    func displayInformation(info: [Battery])
+    func displayInformation(info: [Battery], settings: (String, String))
 }
 protocol DescriptionViewOutputProtocol: class {
     func prepareInformation()
@@ -21,6 +21,7 @@ class DescriptionTableViewController: UITableViewController, DescriptionViewInpu
     var presenter: DescriptionViewOutputProtocol?
 
     var info: [Battery] = []
+    var settingsName: (String, String) = ("","")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +34,9 @@ class DescriptionTableViewController: UITableViewController, DescriptionViewInpu
     }
 
     // MARK: - Functions
-    func displayInformation(info: [Battery]) {
+    func displayInformation(info: [Battery], settings: (String, String)) {
         self.info = info
+        self.settingsName = settings
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -67,9 +69,7 @@ class DescriptionTableViewController: UITableViewController, DescriptionViewInpu
                                                        for: indexPath) as? DescriptionCell else {
             fatalError("The dequeued cell is not an instance of DescriptionCell")
         }
-
-        cell.dateLabel.text = info[indexPath.section].date
-        cell.descriptionLabel.text = info[indexPath.section].charge
+        cell.update(batteryState: info[indexPath.row], settingsName: settingsName)
 
         return cell
     }
