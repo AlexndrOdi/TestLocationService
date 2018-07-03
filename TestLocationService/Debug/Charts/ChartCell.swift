@@ -12,7 +12,7 @@ import Charts
 class ChartCell: UITableViewCell {
 
     // MARK: - Properties
-
+    let data: BarChartData = BarChartData(dataSets: [])
 
     // MARK: - Views
     var chart: BarChartView = {
@@ -37,19 +37,15 @@ class ChartCell: UITableViewCell {
     }
 
     // MARK: - Functions
-    func updateChart(_ consumptions: [Consumption]) {
-        let data: BarChartData = BarChartData(dataSets: [])
+    func updateChart(_ consumption: Consumption) {
         DispatchQueue.main.async {
-            
-            consumptions.forEach({ (cons) in
-                let dataEntry = BarChartDataEntry(x: Double(cons.time), y: Double(cons.charge))
-                let label = "Acc: \(cons.preset.accuracyName), dist: \(cons.preset.distanceName)"
-                let dataSet = BarChartDataSet(values: [dataEntry], label: label)
-                dataSet.setColor(UIColor().colorBy(value: cons.time))
-                data.addDataSet(dataSet)
-            })
-            data.barWidth = 1
-            self.chart.data = data
+            let dataEntry = BarChartDataEntry(x: Double(consumption.time), y: Double(consumption.charge))
+            let label = "Acc: \(consumption.preset.accuracyName), dist: \(consumption.preset.distanceName)"
+            let dataSet = BarChartDataSet(values: [dataEntry], label: label)
+            dataSet.setColor(UIColor().colorBy(value: consumption.charge))
+            self.data.addDataSet(dataSet)
+            self.data.barWidth = 2
+            self.chart.data = self.data
         }
     }
 

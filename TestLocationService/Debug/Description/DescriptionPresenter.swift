@@ -13,19 +13,19 @@ protocol DescriptionPresenterProtocol: DescriptionInteractorOutputProtocol, Desc
 }
 
 class DescriptionPresenter: DescriptionPresenterProtocol {
+
     // MARK: - Properties
     weak var view: DescriptionViewInputProtocol?
     var interactor: DescriptionInteractorInputProtocol?
 
     // MARK: - Functions
     func prepareInformation() {
-        interactor?.fetchInformationByTimer()
+        interactor?.fetchInformation()
     }
 
-    func provideAllInformationByTimer(array: [Battery], settings: (String, String)) {
-        view?.displayInformation(info: array, settings: settings)
+    func provideAllInformation(_ array: [Consumption]) {
+        view?.displayInformation(array)
     }
-
     // MARK: - Private functions
 
 }

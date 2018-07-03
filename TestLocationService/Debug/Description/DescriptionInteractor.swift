@@ -9,31 +9,34 @@
 import Foundation
 
 protocol DescriptionInteractorInputProtocol: class {
-    func fetchInformationByTimer()
+    func fetchInformation()
 }
 protocol DescriptionInteractorOutputProtocol: class {
-    func provideAllInformationByTimer(array: [Battery], settings: (String, String))
+    func provideAllInformation(_ array: [Consumption])
 }
 
 class DescriptionInteractor: DescriptionInteractorInputProtocol {
     // MARK: - Properties
     weak var presenter: DescriptionInteractorOutputProtocol?
 
-    var infoBatteryArray: [Battery] = []
-    var lastFetchedData = Set<BatteryHistory>()
+    var consumptions: [Consumption] = []
 
     // MARK: - Functions
-    func fetchInformationByTimer() {
-        let fetchedData = DeviceManager.sharedInstance.allHistoryBatteryUsage()
-        let (acc, dist) = LocationManager.sharedInstance.currentSettings()
-        let subtrack = fetchedData.subtracting(self.lastFetchedData)
-        subtrack.forEach({ (item) in
-            let time = String(describing: item.time) + "sec"
-            let charge = String(describing: item.charge * 100) + "%"
-            self.infoBatteryArray.append(Battery(date: time, charge: charge))
-        })
-        self.lastFetchedData = fetchedData
-        self.presenter?.provideAllInformationByTimer(array: self.infoBatteryArray.sorted(by: { $0.date < $1.date }),
-                                                     settings: (acc.description, dist.description))
+    func fetchInformation() {
+        DispatchQueue.main.async {
+            let charts = DataManager.sharedInstance.fetchAllCharts()
+            charts.forEach { (chart) in
+                if let maxTime = chart.history.max(by: { x, y in x.time < y.time })?.time,
+                    let minTime = chart.history.min(by: { x, y in x.time < y.time })?.time,
+                    let maxCharge = chart.history.max(by: { x, y in x.charge < y.charge })?.charge,
+                    let minCharge = chart.history.min(by: { x, y in x.charge < y.charge })?.charge {
+                        let consTime = maxTime - minTime
+                        let consCharge = maxCharge - minCharge
+                        self.consumptions.append(Consumption(preset: chart.preset,
+                                                             time: consTime, charge: consCharge * 100))
+                }
+            }
+            self.presenter?.provideAllInformation(self.consumptions)
+        }
     }
 }

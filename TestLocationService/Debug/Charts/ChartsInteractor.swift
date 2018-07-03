@@ -28,14 +28,17 @@ class ChartsInteractor: ChartsInteractorInputProtocol {
         DispatchQueue.main.async {
             let charts = DataManager.sharedInstance.fetchAllCharts()
             charts.forEach({ (chart) in
-                if chart.history.count >= 15 {
-                    let neededStore = chart.history[14]
-                    self.consumptions.append(Consumption(preset: chart.preset,
-                                                         time: neededStore.time,
-                                                         charge: neededStore.charge))
+                if let maxTime = chart.history.max(by: { x, y in x.time < y.time })?.time,
+                    let minTime = chart.history.min(by: { x, y in x.time < y.time })?.time,
+                    let maxCharge = chart.history.max(by: { x, y in x.charge < y.charge })?.charge,
+                    let minCharge = chart.history.min(by: { x, y in x.charge < y.charge })?.charge {
+                        let consTime = maxTime - minTime
+                        let consCharge = maxCharge - minCharge
+                        let averageChargeInTime = consCharge / Float(consTime)
+                        self.consumptions.append(Consumption(preset: chart.preset,
+                                                             time: 60, charge: averageChargeInTime * 60 * 100))
                 }
             })
-            // TODO: доделать потом очистку
             self.presenter?.provideAllCharts(self.consumptions)
         }
     }

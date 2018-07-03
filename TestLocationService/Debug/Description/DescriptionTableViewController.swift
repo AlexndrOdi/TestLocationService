@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DescriptionViewInputProtocol: class {
-    func displayInformation(info: [Battery], settings: (String, String))
+    func displayInformation(_ info: [Consumption])
 }
 protocol DescriptionViewOutputProtocol: class {
     func prepareInformation()
@@ -20,8 +20,7 @@ class DescriptionTableViewController: UITableViewController, DescriptionViewInpu
     // MARK: - Properties
     var presenter: DescriptionViewOutputProtocol?
 
-    var info: [Battery] = []
-    var settingsName: (String, String) = ("","")
+    var consumption: [Consumption] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +33,8 @@ class DescriptionTableViewController: UITableViewController, DescriptionViewInpu
     }
 
     // MARK: - Functions
-    func displayInformation(info: [Battery], settings: (String, String)) {
-        self.info = info
-        self.settingsName = settings
+    func displayInformation(_ info: [Consumption]) {
+        self.consumption = info
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -48,11 +46,15 @@ class DescriptionTableViewController: UITableViewController, DescriptionViewInpu
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return info.count
+        return consumption.count
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 10
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -69,7 +71,7 @@ class DescriptionTableViewController: UITableViewController, DescriptionViewInpu
                                                        for: indexPath) as? DescriptionCell else {
             fatalError("The dequeued cell is not an instance of DescriptionCell")
         }
-        cell.update(batteryState: info[indexPath.row], settingsName: settingsName)
+        cell.update(consumption[indexPath.section])
 
         return cell
     }

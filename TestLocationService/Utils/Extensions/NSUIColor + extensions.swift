@@ -9,23 +9,23 @@
 import UIKit
 
 extension UIColor {
-    func colorBy(value: Int) -> UIColor {
-        if value < 5 {
+    func colorBy(value: Float) -> UIColor {
+        if value < 0.05 {
             return UIColor.red
         }
-        if value < 10 {
+        if value < 0.07 {
             return UIColor.green
         }
-        if value < 20 {
+        if value < 0.09 {
             return UIColor.yellow
         }
-        if value < 35 {
+        if value < 0.11 {
             return UIColor.orange
         }
-        if value < 50 {
+        if value < 0.13 {
             return UIColor.purple
         }
-        if value < 60 {
+        if value < 0.16 {
             return UIColor.cyan
         }
         return UIColor.blue

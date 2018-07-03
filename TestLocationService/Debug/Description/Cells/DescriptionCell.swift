@@ -30,37 +30,46 @@ class DescriptionCell: UITableViewCell {
     var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
     }()
 
     var accuracyName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textAlignment = .right
         return label
     }()
     var distanceFilterName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textAlignment = .right
         return label
     }()
-    var verticalStack: UIStackView = {
+    var verticalStackRight: UIStackView = {
         let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.distribution = .fill
-        stack.spacing = 8
+        stack.spacing = 4
+        return stack
+    }()
+    var verticalStackLeft: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .fill
+        stack.spacing = 4
         return stack
     }()
     // MARK: - Functions
-    func update(batteryState: Battery, settingsName: (String, String)) {
-        dateLabel.text = batteryState.date
-        descriptionLabel.text = batteryState.charge
-        accuracyName.text = settingsName.0
-        distanceFilterName.text = settingsName.1
+    func update(_ item: Consumption) {
+        dateLabel.text = "За \(item.time.description) сек"
+        descriptionLabel.text = "Расход батареи \(item.charge.description) %"
+        accuracyName.text = "Точность: \(item.preset.accuracyName)"
+        distanceFilterName.text = "Дистанция: \(item.preset.distanceName)"
     }
 
     // MARK: - Private functions
@@ -68,32 +77,26 @@ class DescriptionCell: UITableViewCell {
         addSubview(dateLabel)
         addSubview(descriptionLabel)
 
-        verticalStack.addArrangedSubview(accuracyName)
-        verticalStack.addArrangedSubview(distanceFilterName)
+        verticalStackRight.addArrangedSubview(accuracyName)
+        verticalStackRight.addArrangedSubview(distanceFilterName)
 
-        addSubview(verticalStack)
+        verticalStackLeft.addArrangedSubview(dateLabel)
+        verticalStackLeft.addArrangedSubview(descriptionLabel)
 
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]|",
-                                                      options: NSLayoutFormatOptions(),
-                                                      metrics: nil,
-                                                      views: ["v0": dateLabel]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-2-[v0]|",
-                                                      options: NSLayoutFormatOptions(),
-                                                      metrics: nil,
-                                                      views: ["v0": dateLabel]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]|",
-                                                      options: NSLayoutFormatOptions(),
-                                                      metrics: nil,
-                                                      views: ["v0": descriptionLabel]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-34-[v0]|",
-                                                      options: NSLayoutFormatOptions(),
-                                                      metrics: nil,
-                                                      views: ["v0": descriptionLabel]))
-        let centerY = NSLayoutConstraint(item: verticalStack, attribute: .centerY, relatedBy: .equal,
+        addSubview(verticalStackRight)
+        addSubview(verticalStackLeft)
+
+        let centerYStackLeft = NSLayoutConstraint(item: verticalStackLeft, attribute: .centerY, relatedBy: .equal,
+                                                  toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        let leftStackLeft = NSLayoutConstraint(item: verticalStackLeft, attribute: .leading, relatedBy: .equal,
+                                               toItem: self, attribute: .leading, multiplier: 1, constant: 8)
+        let centerYStackRight = NSLayoutConstraint(item: verticalStackRight, attribute: .centerY, relatedBy: .equal,
                                          toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
-        let right = NSLayoutConstraint(item: verticalStack, attribute: .trailing, relatedBy: .equal,
-                                       toItem: self, attribute: .trailing, multiplier: 1, constant: 8)
-        addConstraints([centerY, right])
+        let rightStackRight = NSLayoutConstraint(item: verticalStackRight, attribute: .trailing, relatedBy: .equal,
+                                       toItem: self, attribute: .trailing, multiplier: 1, constant: -8)
+        addConstraints([centerYStackLeft, leftStackLeft,
+                        centerYStackRight, rightStackRight])
+
         isUserInteractionEnabled = false
     }
 }

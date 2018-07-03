@@ -22,12 +22,10 @@
 		954F17BC20E911DC0057B613 /* NSUIColor + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954F17BB20E911DC0057B613 /* NSUIColor + extensions.swift */; };
 		956624C620EA4A2900751044 /* BatteryHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624C520EA4A2900751044 /* BatteryHistory.swift */; };
 		956624C820EA4A4000751044 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624C720EA4A4000751044 /* Battery.swift */; };
-		956624CA20EA4A5F00751044 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624C920EA4A5F00751044 /* Location.swift */; };
 		956624CC20EA4A7A00751044 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624CB20EA4A7A00751044 /* Preset.swift */; };
 		956624CE20EA4AEB00751044 /* Consumption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624CD20EA4AEB00751044 /* Consumption.swift */; };
 		956624D020EA4AFC00751044 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624CF20EA4AFC00751044 /* Chart.swift */; };
 		956624D220EA4B1600751044 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624D120EA4B1600751044 /* Errors.swift */; };
-		956624D420EA7B5C00751044 /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956624D320EA7B5C00751044 /* Modelable.swift */; };
 		957821C520E1104F00511172 /* PresetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957821C420E1104F00511172 /* PresetCell.swift */; };
 		9598A9E720DE5E670077A358 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9E620DE5E670077A358 /* MapPresenter.swift */; };
 		9598A9E920DE5E720077A358 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A9E820DE5E720077A358 /* MapInteractor.swift */; };
@@ -76,12 +74,10 @@
 		954F17BB20E911DC0057B613 /* NSUIColor + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor + extensions.swift"; sourceTree = "<group>"; };
 		956624C520EA4A2900751044 /* BatteryHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistory.swift; sourceTree = "<group>"; };
 		956624C720EA4A4000751044 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
-		956624C920EA4A5F00751044 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		956624CB20EA4A7A00751044 /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
 		956624CD20EA4AEB00751044 /* Consumption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consumption.swift; sourceTree = "<group>"; };
 		956624CF20EA4AFC00751044 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		956624D120EA4B1600751044 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		956624D320EA7B5C00751044 /* Modelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
 		957821C420E1104F00511172 /* PresetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCell.swift; sourceTree = "<group>"; };
 		9598A9E620DE5E670077A358 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		9598A9E820DE5E720077A358 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
@@ -212,12 +208,10 @@
 			children = (
 				956624C520EA4A2900751044 /* BatteryHistory.swift */,
 				956624C720EA4A4000751044 /* Battery.swift */,
-				956624C920EA4A5F00751044 /* Location.swift */,
 				956624CB20EA4A7A00751044 /* Preset.swift */,
 				956624CD20EA4AEB00751044 /* Consumption.swift */,
 				956624CF20EA4AFC00751044 /* Chart.swift */,
 				956624D120EA4B1600751044 /* Errors.swift */,
-				956624D320EA7B5C00751044 /* Modelable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -440,7 +434,6 @@
 			files = (
 				956624C820EA4A4000751044 /* Battery.swift in Sources */,
 				95A88B4720E818130003B96E /* ChartCell.swift in Sources */,
-				956624CA20EA4A5F00751044 /* Location.swift in Sources */,
 				95156CF920DA3529003DD2B4 /* TabBarViewController.swift in Sources */,
 				956624C620EA4A2900751044 /* BatteryHistory.swift in Sources */,
 				95B98A1E20E18BD6006B75CA /* DataManager.swift in Sources */,
@@ -481,7 +474,6 @@
 				9598A9E720DE5E670077A358 /* MapPresenter.swift in Sources */,
 				9598A9F820DEEDD00077A358 /* DebugInteractor.swift in Sources */,
 				9598A9F420DEA45F0077A358 /* SettingsInteractor.swift in Sources */,
-				956624D420EA7B5C00751044 /* Modelable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

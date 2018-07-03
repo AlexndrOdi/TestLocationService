@@ -150,6 +150,11 @@ class DataManager {
         print("Data saved in memory!")
     }
 
+    /// Remove all history from local data storage
+    func clearAllHistory() {
+        // TODO: ...
+    }
+
     func fetchAllCharts() -> [Chart] {
         var result: [Chart] = []
         settings.forEach { (preset) in
